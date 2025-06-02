@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio - Muhammad Fadhil Adha</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: #2c3e50;
+        background: #ffffff;
+      }
+
+      .container {
+        max-width: 210mm;
+        margin: 0 auto;
+        padding: 20px;
+        background: white;
+      }
+
+      .header {
+        text-align: center;
+        margin-bottom: 40px;
+        padding: 30px 0;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-radius: 15px;
+      }
+
+      .header h1 {
+        font-size: 2.5em;
+        font-weight: 700;
+        margin-bottom: 10px;
+      }
+
+      .header p {
+        font-size: 1.2em;
+        font-weight: 400;
+        opacity: 0.9;
+      }
+
+      .contact-info {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+        border-left: 5px solid #667eea;
+      }
+
+      .contact-info h3 {
+        color: #667eea;
+        margin-bottom: 15px;
+        font-size: 1.3em;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        font-size: 0.95em;
+      }
+
+      .contact-item strong {
+        min-width: 80px;
+        color: #495057;
+      }
+
+      .section {
+        margin-bottom: 35px;
+      }
+
+      .section h2 {
+        color: #2c3e50;
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+        font-weight: 600;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+
+      .skill-category {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        border: 1px solid #e9ecef;
+      }
+
+      .skill-category h4 {
+        color: #667eea;
+        margin-bottom: 12px;
+        font-size: 1.1em;
+        font-weight: 600;
+      }
+
+      .skill-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .skill-tag {
+        background: #667eea;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 15px;
+        font-size: 0.85em;
+        font-weight: 500;
+      }
+
+      .projects-grid {
+        display: grid;
+        gap: 25px;
+      }
+
+      .project-card {
+        background: #ffffff;
+        border: 1px solid #e9ecef;
+        border-radius: 12px;
+        padding: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.2s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 15px;
+      }
+
+      .project-title {
+        color: #2c3e50;
+        font-size: 1.3em;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .project-type {
+        background: #28a745;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        font-weight: 500;
+      }
+
+      .project-description {
+        color: #6c757d;
+        margin-bottom: 15px;
+        line-height: 1.6;
+      }
+
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 15px;
+      }
+
+      .tech-tag {
+        background: #fd7e14;
+        color: white;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-size: 0.75em;
+        font-weight: 500;
+      }
+
+      .github-stats {
+        background: linear-gradient(135deg, #24292e 0%, #040d21 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+      }
+
+      .github-stats h3 {
+        margin-bottom: 20px;
+        color: #58a6ff;
+        font-size: 1.4em;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 15px;
+        background: rgba(88, 166, 255, 0.1);
+        border-radius: 8px;
+        border: 1px solid rgba(88, 166, 255, 0.2);
+      }
+
+      .stat-number {
+        font-size: 2em;
+        font-weight: 700;
+        color: #58a6ff;
+        display: block;
+      }
+
+      .stat-label {
+        font-size: 0.9em;
+        opacity: 0.8;
+        margin-top: 5px;
+      }
+
+      .experience {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 5px solid #28a745;
+        margin-bottom: 25px;
+      }
+
+      .experience-item {
+        margin-bottom: 25px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #e9ecef;
+      }
+
+      .experience-item:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .experience-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+
+      .experience-title {
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1.1em;
+      }
+
+      .experience-company {
+        color: #28a745;
+        font-weight: 500;
+        margin-bottom: 5px;
+      }
+
+      .experience-period {
+        color: #6c757d;
+        font-size: 0.9em;
+        font-weight: 500;
+      }
+
+      .experience-description {
+        color: #6c757d;
+        margin-top: 8px;
+        font-size: 0.95em;
+      }
+
+      .experience-highlights {
+        margin-top: 10px;
+      }
+
+      .experience-highlights ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .experience-highlights li {
+        color: #495057;
+        font-size: 0.9em;
+        margin-bottom: 6px;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .experience-highlights li:before {
+        content: "✓";
+        color: #28a745;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      .education {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 12px;
+        margin-bottom: 30px;
+      }
+
+      .education h3 {
+        color: white;
+        margin-bottom: 15px;
+        font-size: 1.4em;
+      }
+
+      .education-item {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .education-degree {
+        font-size: 1.2em;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+
+      .education-school {
+        font-size: 1.1em;
+        margin-bottom: 10px;
+        opacity: 0.9;
+      }
+
+      .education-details {
+        font-size: 0.95em;
+        opacity: 0.8;
+        line-height: 1.6;
+      }
+
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+
+      .achievement-card {
+        background: #fff3cd;
+        padding: 20px;
+        border-radius: 12px;
+        border-left: 5px solid #ffc107;
+      }
+
+      .achievement-card h4 {
+        color: #d39e00;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+      }
+
+      .achievement-card p {
+        color: #495057;
+        font-size: 0.95em;
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 40px;
+        padding: 20px;
+        background: #2c3e50;
+        color: white;
+        border-radius: 12px;
+      }
+
+      .print-button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: #667eea;
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 25px;
+        cursor: pointer;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        z-index: 1000;
+      }
+
+      .print-button:hover {
+        background: #5a67d8;
+        transform: translateY(-2px);
+      }
+
+      .two-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+        margin-bottom: 30px;
+      }
+
+      @media (max-width: 768px) {
+        .two-column {
+          grid-template-columns: 1fr;
+        }
+
+        .experience-header {
+          flex-direction: column;
+        }
+      }
+
+      @media print {
+        .print-button {
+          display: none;
+        }
+
+        body {
+          background: white;
+        }
+
+        .container {
+          max-width: none;
+          margin: 0;
+          padding: 15px;
+        }
+
+        .project-card:hover {
+          transform: none;
+        }
+      }
+
+      @page {
+        margin: 1cm;
+        size: A4;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="print-button" onclick="window.print()">📄 Download PDF</button>
+
+    <div class="container">
+      <header class="header">
+        <h1>Muhammad Fadhil Adha</h1>
+        <p>Full Stack Developer & Digital Marketing Specialist | Laravel Expert</p>
+      </header>
+
+      <section class="contact-info">
+        <h3>📧 Informasi Kontak</h3>
+        <div class="contact-grid">
+          <div class="contact-item">
+            <strong>Telepon:</strong>
+            <span>082273318016</span>
+          </div>
+          <div class="contact-item">
+            <strong>Email:</strong>
+            <span>fadhil.adhaa26@gmail.com</span>
+          </div>
+          <div class="contact-item">
+            <strong>LinkedIn:</strong>
+            <span>muhammad-fadhil-adha-440945178</span>
+          </div>
+          <div class="contact-item">
+            <strong>Portfolio:</strong>
+            <span>defadels.github.io</span>
+          </div>
+          <div class="contact-item">
+            <strong>GitHub:</strong>
+            <span>github.com/defadels</span>
+          </div>
+          <div class="contact-item">
+            <strong>Alamat:</strong>
+            <span>Medan Barat, Sumatera Utara</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="github-stats">
+        <h3>📊 GitHub & Professional Statistics</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">44</span>
+            <div class="stat-label">GitHub Repositories</div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3.81</span>
+            <div class="stat-label">GPA (S1 Sistem Informasi)</div>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">3+</span>
+            <div class="stat-label">Companies Worked</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>💼 Profil Profesional</h2>
+        <p style="font-size: 1.05em; color: #495057; line-height: 1.7; background: #f8f9fa; padding: 20px; border-radius: 12px">
+          Seorang Full Stack Developer dan Digital Marketing Specialist dengan <strong>5 tahun pengalaman</strong> dalam pengembangan aplikasi web menggunakan Laravel, Livewire, Bootstrap, dan Tailwind CSS. Saat ini bekerja di PT. Bayhani
+          Sinergi Nusantara sejak 2021, dengan expertise dalam pengembangan sistem berbasis web, integrasi Google Spreadsheet API, Knowledge Management System, serta menjalankan kampanye Facebook Ads dan pengelolaan marketplace. Memiliki
+          track record solid dengan <strong>44+ repositori GitHub</strong> dan pengalaman multi-company sebagai freelancer.
+        </p>
+      </section>
+
+      <div class="two-column">
+        <section class="education">
+          <h3>🎓 Pendidikan</h3>
+          <div class="education-item">
+            <div class="education-degree">S1 Sistem Informasi</div>
+            <div class="education-school">Universitas Potensi Utama, Medan</div>
+            <div class="education-details">
+              Sep 2021 - Dec 2025 (Expected)<br />
+              <strong>GPA: 3.81/4.00</strong><br /><br />
+              <strong>Leadership Experience:</strong><br />
+              • Ketua Umum UKM UPUCC 2024/2025<br />
+              • Wakil Ketua Umum UKM UPUCC 2023/2024<br />
+              • Pemateri berbagai workshop teknologi
+            </div>
+          </div>
+        </section>
+
+        <section class="achievements-grid">
+          <div class="achievement-card">
+            <h4>🏆 Pencapaian & Sertifikasi</h4>
+            <p>
+              • #JuaraGCP 2023<br />
+              • Sertifikat BNSP Programming & Software Development<br />
+              • VSGA Digital Talent Scholarship Kominfo<br />
+              • Alibaba Cloud Re-cloud Challenges 2022
+            </p>
+          </div>
+          <div class="achievement-card">
+            <h4>🌐 Komunitas & Organisasi</h4>
+            <p>
+              • Google Developer Group Medan (2023-Present)<br />
+              • JPRMI Kota Medan - Humas (2022-2025)<br />
+              • UPUCC - Ketua Umum (2025-Present)
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <section class="section">
+        <h2>🛠️ Keahlian Teknis</h2>
+        <div class="skills-grid">
+          <div class="skill-category">
+            <h4>Backend Development</h4>
+            <div class="skill-list">
+              <span class="skill-tag">Laravel</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">RESTful API</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">Livewire</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Frontend Development</h4>
+            <div class="skill-list">
+              <span class="skill-tag">HTML5</span>
+              <span class="skill-tag">CSS3</span>
+              <span class="skill-tag">JavaScript ES6</span>
+              <span class="skill-tag">jQuery</span>
+              <span class="skill-tag">Bootstrap 5</span>
+              <span class="skill-tag">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Digital Marketing</h4>
+            <div class="skill-list">
+              <span class="skill-tag">Facebook Ads</span>
+              <span class="skill-tag">Content Marketing</span>
+              <span class="skill-tag">Shopee Ads</span>
+              <span class="skill-tag">Social Media</span>
+              <span class="skill-tag">SEO</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <h4>Tools & Platform</h4>
+            <div class="skill-list">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">WordPress</span>
+              <span class="skill-tag">Google Sheets API</span>
+              <span class="skill-tag">Figma</span>
+              <span class="skill-tag">Canva</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>💼 Pengalaman Kerja</h2>
+
+        <div class="experience">
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Full Stack Web Developer & Digital Marketing</div>
+                <div class="experience-company">PT. Bayhani Sinergi Nusantara</div>
+              </div>
+              <div class="experience-period">Feb 2021 - Present</div>
+            </div>
+            <div class="experience-description">Perusahaan manufaktur sebagai supplier terbesar madu Sumatera. Bertanggung jawab dalam full-stack development dan digital marketing strategy.</div>
+            <div class="experience-highlights">
+              <ul>
+                <li>Mengembangkan aplikasi web input form penjualan menggunakan Laravel & Google Spreadsheet API</li>
+                <li>Membuat sistem pencatatan arus kas produksi dengan integrasi Spreadsheet otomatis</li>
+                <li>Mengembangkan aplikasi tracking kode produksi menggunakan Laravel Livewire dengan QR Code</li>
+                <li>Membangun sistem generate voucher diskon untuk campaign marketing</li>
+                <li>Mengembangkan Knowledge Management System (KMS) dengan stack Laravel, Livewire, Tailwind CSS</li>
+                <li>Menjalankan Facebook Ads campaign untuk brand awareness dan lead generation</li>
+                <li>Mengelola marketplace Shopee dan optimasi penjualan dengan Shopee Ads</li>
+                <li>Mengembangkan website e-commerce dan blog menggunakan WordPress</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Full Stack Web Developer - Freelance</div>
+                <div class="experience-company">PT. Global Indo Asets</div>
+              </div>
+              <div class="experience-period">Mar 2025 - Present</div>
+            </div>
+            <div class="experience-description">Perusahaan properti - mengembangkan sistem manajemen properti dan aplikasi chatbox.</div>
+            <div class="experience-highlights">
+              <ul>
+                <li>Mengembangkan Mini Property Management System (PMS) menggunakan Laravel, Livewire, Tailwind CSS</li>
+                <li>Slicing tampilan dari Figma untuk aplikasi Chatbox Pertare 2.0</li>
+                <li>Kolaborasi dengan tim internal untuk pengembangan module dan component</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Full Stack Web Developer - Freelance</div>
+                <div class="experience-company">Fastwork</div>
+              </div>
+              <div class="experience-period">Jan 2024 - Present</div>
+            </div>
+            <div class="experience-description">Platform freelancer aktif dengan berbagai project web development.</div>
+            <div class="experience-highlights">
+              <ul>
+                <li>Mengembangkan fitur penerjemah bahasa dengan Vanilla JavaScript</li>
+                <li>Membuat website koperasi simpan pinjam dengan Laravel + Bootstrap 5 + MySQL</li>
+                <li>Menyelesaikan bug fixes pada website CodeIgniter 3</li>
+                <li>Mengembangkan website gudang dan sistem inventory</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="experience-item">
+            <div class="experience-header">
+              <div>
+                <div class="experience-title">Web Developer - Freelance</div>
+                <div class="experience-company">PT. Salam Elektronik Project</div>
+              </div>
+              <div class="experience-period">Mar 2020 - Apr 2022</div>
+            </div>
+            <div class="experience-description">Perusahaan jasa elektronik dan teknologi.</div>
+            <div class="experience-highlights">
+              <ul>
+                <li>Mengembangkan website media pembelajaran sekolah dengan Bootstrap framework</li>
+                <li>Membuat website pengaturan jam digital masjid menggunakan Laravel & Bootstrap</li>
+                <li>Mengembangkan REST API menggunakan Laravel untuk data depot di Sibolga</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>🚀 Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Knowledge Management System (KMS)</h3>
+              </div>
+              <span class="project-type">Enterprise</span>
+            </div>
+            <p class="project-description">Sistem manajemen pengetahuan perusahaan sebagai data center dan knowledge sharing platform. Memfasilitasi kolaborasi tim dan dokumentasi knowledge perusahaan secara terpusat.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">Livewire</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Mini Property Management System</h3>
+              </div>
+              <span class="project-type">Real Estate</span>
+            </div>
+            <p class="project-description">Sistem manajemen properti mini untuk PT. Global Indo Asets dengan fitur lengkap pengelolaan aset properti, client management, dan reporting dashboard.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">Livewire</span>
+              <span class="tech-tag">Tailwind CSS</span>
+              <span class="tech-tag">Figma to Code</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Sistem Tracking QR Code Produksi</h3>
+              </div>
+              <span class="project-type">Manufacturing</span>
+            </div>
+            <p class="project-description">Aplikasi tracking kode produksi dengan QR Code untuk transparency supply chain. Customer dapat scan QR pada label produk untuk melihat informasi asal dan tanggal produksi.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">Livewire</span>
+              <span class="tech-tag">QR Code</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Web Madu Al-Hafizh E-Commerce</h3>
+              </div>
+              <span class="project-type">E-Commerce</span>
+            </div>
+            <p class="project-description">Platform e-commerce untuk penjualan produk madu dengan fitur katalog, shopping cart, payment gateway, dan order management system yang terintegrasi dengan WordPress.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">WordPress</span>
+              <span class="tech-tag">Bootstrap</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Sistem Google Spreadsheet Integration</h3>
+              </div>
+              <span class="project-type">Automation</span>
+            </div>
+            <p class="project-description">Aplikasi otomasi input data penjualan dan arus kas produksi yang terintegrasi dengan Google Spreadsheet API untuk real-time data synchronization.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">Google Sheets API</span>
+              <span class="tech-tag">RESTful API</span>
+              <span class="tech-tag">Bootstrap</span>
+            </div>
+          </div>
+
+          <div class="project-card">
+            <div class="project-header">
+              <div>
+                <h3 class="project-title">Website Koperasi Simpan Pinjam</h3>
+              </div>
+              <span class="project-type">FinTech</span>
+            </div>
+            <p class="project-description">Sistem manajemen koperasi dengan fitur simpan pinjam, perhitungan bunga otomatis, member management, dan reporting dashboard untuk administrasi koperasi.</p>
+            <div class="project-tech">
+              <span class="tech-tag">Laravel</span>
+              <span class="tech-tag">Bootstrap 5</span>
+              <span class="tech-tag">MySQL</span>
+              <span class="tech-tag">Financial Logic</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2>🎯 Keunggulan Kompetitif</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px">
+          <div style="background: #e8f5e8; padding: 20px; border-radius: 12px; border-left: 5px solid #28a745">
+            <h4 style="color: #28a745; margin-bottom: 10px">🏆 Track Record Solid</h4>
+            <p style="color: #495057; font-size: 0.95em">44+ repositori GitHub menunjukkan konsistensi dan dedikasi dalam pengembangan aplikasi</p>
+          </div>
+          <div style="background: #fff3cd; padding: 20px; border-radius: 12px; border-left: 5px solid #ffc107">
+            <h4 style="color: #d39e00; margin-bottom: 10px">⚡ Laravel Expert</h4>
+            <p style="color: #495057; font-size: 0.95em">Penguasaan mendalam Laravel framework dengan pengalaman real-world projects</p>
+          </div>
+          <div style="background: #d1ecf1; padding: 20px; border-radius: 12px; border-left: 5px solid #17a2b8">
+            <h4 style="color: #138496; margin-bottom: 10px">🔄 Full-Stack Capability</h4>
+            <p style="color: #495057; font-size: 0.95em">Kemampuan end-to-end development dari backend API hingga frontend interface</p>
+          </div>
+          <div style="background: #f8d7da; padding: 20px; border-radius: 12px; border-left: 5px solid #dc3545">
+            <h4 style="color: #721c24; margin-bottom: 10px">📚 Continuous Learning</h4>
+            <p style="color: #495057; font-size: 0.95em">Selalu update dengan teknologi terbaru dan best practices dalam development</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <p><strong>Muhammad Fadhil Adha</strong> • Laravel Developer</p>
+        <p>Siap berkontribusi dalam tim development dan mengembangkan solusi web yang berkualitas tinggi</p>
+        <p style="margin-top: 10px; opacity: 0.8">📧 Hubungi saya untuk diskusi lebih lanjut tentang opportunity ini</p>
+      </footer>
+    </div>
+
+    <script>
+      // Add smooth scrolling and print functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        // Add print styles when printing
+        window.addEventListener("beforeprint", function () {
+          document.body.style.background = "white";
+        });
+
+        // Restore styles after printing
+        window.addEventListener("afterprint", function () {
+          document.body.style.background = "#ffffff";
+        });
+      });
+    </script>
+  </body>
+</html>
